@@ -65,31 +65,35 @@ RegisterNumber:  212221230052
 ```
 ```
 ## UP COUNTER:
-module up(input clk,input reset,output[0:3]counter);
-reg[0:3] counter_up;
-always@(posedge clk or posedge reset)
+
+```
+module upcounter(clock,reset,up);
+input clock,reset;
+output reg[0:2] up;
+always@(posedge clock or posedge reset)
 begin
 if(reset)
-counter_up <=4'd0;
+up=3'b 000;
 else
-counter_up<=counter_up+4'd1;
+up=up+1;
 end
-assign counter=counter_up;
 endmodule
-```
+
 ```
 ## DOWN COUNTER
-module DOWN(input clk,input reset,output[0:3]counter);
-reg[0:3] counter_down;
-always@(posedge clk or posedge reset)
+```
+module DOWN(clock,reset,down);
+input clock,reset;
+output reg[2:0] down;
+always@(posedge clock or posedge reset)
 begin
 if(reset)
-counter_down <=4'd0;
+down=3'b 111;
 else
-counter_down<=counter_down+4'd1;
+down=down-1;
 end
-assign counter=counter_down;
 endmodule
+
 ```
 
 
