@@ -63,7 +63,7 @@ Program for flipflops  and verify its truth table in quartus using Verilog progr
 Developed by: KRISHNA PRAKAASH D M
 RegisterNumber:  212221230052
 ```
-```
+
 ## UP COUNTER:
 
 ```
